@@ -1,7 +1,10 @@
 package com.example.bank;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public class AccountsService {
     private final AccountsRepository accountRepository;
 
