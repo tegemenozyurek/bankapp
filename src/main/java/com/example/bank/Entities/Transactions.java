@@ -4,13 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 
 @Entity
 public class Transactions {
@@ -22,5 +25,7 @@ public class Transactions {
     private String type;
     private double amount;
     private String description;
-    private Date created_at;
+
+    @CreationTimestamp
+    private LocalDateTime created_at;
 }
