@@ -11,15 +11,16 @@ import java.util.Date;
 
 @Getter
 @Setter
+
 @Entity
 public class Transactions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
-    private int fromAccountId;
-    private int toAccountId;
+    private Integer id;
+    private Integer from_account_id;
+    private Integer to_account_id;
     private String type;
     private double amount;
     private String description;
-    private Date createdAt;
+    private Date created_at;
 }
