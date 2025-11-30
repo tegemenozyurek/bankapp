@@ -15,8 +15,8 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @GetMapping
-    public List<Transactions> findAll() {
-        return transactionService.findAll();
+    @RequestMapping("/all")
+    public List<Transactions> getAllTransactions() {
+        return transactionService.getAllTransactions();
     }
 }

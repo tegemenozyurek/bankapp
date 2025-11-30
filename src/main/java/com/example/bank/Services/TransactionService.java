@@ -19,7 +19,7 @@ public class TransactionService {
                 orElseThrow(() -> new IllegalStateException("Not Found"));
     }
 
-    public List<Transactions> findAll() {
+    public List<Transactions> getAllTransactions() {
         return transactionRepository.findAll();
     }
 }
