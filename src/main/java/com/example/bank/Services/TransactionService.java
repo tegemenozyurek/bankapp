@@ -1,5 +1,7 @@
-package com.example.bank;
+package com.example.bank.Services;
 
+import com.example.bank.Entities.Transactions;
+import com.example.bank.Repositories.TransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

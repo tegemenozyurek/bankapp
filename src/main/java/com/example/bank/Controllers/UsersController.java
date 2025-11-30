@@ -1,5 +1,7 @@
-package com.example.bank;
+package com.example.bank.Controllers;
 
+import com.example.bank.Entities.Users;
+import com.example.bank.Services.UsersService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

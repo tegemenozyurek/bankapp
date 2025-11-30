@@ -1,7 +1,7 @@
-package com.example.bank;
+package com.example.bank.Controllers;
 
-import com.example.bank.TransactionService;
-import com.example.bank.Transactions;
+import com.example.bank.Entities.Transactions;
+import com.example.bank.Services.TransactionService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

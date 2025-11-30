@@ -1,5 +1,7 @@
-package com.example.bank;
+package com.example.bank.Controllers;
 
+import com.example.bank.Services.AccountsService;
+import com.example.bank.Entities.Accounts;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
