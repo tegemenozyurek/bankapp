@@ -31,6 +31,18 @@ public class AccountsService {
     }
 
     public Accounts updateAccount(Accounts account){
-        return accountRepository.save(account);
+
+        Accounts existing = accountRepository.findById(account.getId())
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+
+        if (account.getUser_id() != null) existing.setUser_id(account.getUser_id());
+        if (account.getIban() != null) existing.setIban(account.getIban());
+        if (account.getAccount_number() != null) existing.setAccount_number(account.getAccount_number());
+        if (account.getCurrency() != null) existing.setCurrency(account.getCurrency());
+        if (account.getBalance() != null) existing.setBalance(account.getBalance());
+        if (account.getStatus() != null) existing.setStatus(account.getStatus());
+        if (account.getCreatedAt() != null) existing.setCreatedAt(account.getCreatedAt());
+
+        return accountRepository.save(existing);
     }
 }
