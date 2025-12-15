@@ -18,7 +18,7 @@ public class WithdrawService {
 
     public Accounts withdraw(Integer id, double amount){
         Accounts account = accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
-        transactionRepository.save(new Transactions(id, null, "WITHDRAW", amount, "ivj"));
+        transactionRepository.save(new Transactions(id, null, "WITHDRAW", amount, amount + " withdrawn from " + id));
         account.setBalance(account.getBalance() - amount);
         return accountRepository.save(account);
     }
