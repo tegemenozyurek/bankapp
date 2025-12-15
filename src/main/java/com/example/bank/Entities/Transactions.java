@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @EqualsAndHashCode
-
 @Entity
 public class Transactions {
     @Id
@@ -28,4 +27,16 @@ public class Transactions {
 
     @CreationTimestamp
     private LocalDateTime created_at;
+
+    public Transactions(Integer from_account_id, Integer to_account_id, String type, Double amount, String description) {
+        this.from_account_id = from_account_id;
+        this.to_account_id = to_account_id;
+        this.type = type;
+        this.amount = amount;
+        this.description = description;
+    }
+
+    public Transactions() {
+
+    }
 }
