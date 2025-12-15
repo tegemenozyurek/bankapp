@@ -25,12 +25,12 @@ public class UsersController {
         return userService.getUserById(id);
     }
 
-    @PostMapping
-    public Users saveUser(Users user){
+    @PostMapping("/save")
+    public Users saveUser(@RequestBody Users user){
         return userService.saveUser(user);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable int id){
         userService.deleteUser(id);
     }
