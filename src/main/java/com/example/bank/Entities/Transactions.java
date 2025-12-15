@@ -23,7 +23,7 @@ public class Transactions {
     private Integer from_account_id;
     private Integer to_account_id;
     private String type;
-    private double amount;
+    private Double amount;
     private String description;
 
     @CreationTimestamp

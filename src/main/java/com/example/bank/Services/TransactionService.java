@@ -27,6 +27,19 @@ public class TransactionService {
         return transactionRepository.save(transaction);
     }
 
+    public Transactions updateTransaction(Transactions transaction) {
+        Transactions existing = transactionRepository.findById(transaction.getId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (transaction.getFrom_account_id() != null) existing.setFrom_account_id(transaction.getFrom_account_id());
+        if (transaction.getTo_account_id() != null) existing.setTo_account_id(transaction.getTo_account_id());
+        if (transaction.getType() != null) existing.setType(transaction.getType());
+        if (transaction.getAmount() != null) existing.setAmount(transaction.getAmount());
+        if (transaction.getDescription() != null) existing.setDescription(transaction.getDescription());
+
+        return transactionRepository.save(existing);
+    }
+
     public void deleteTransaction(int id){
          transactionRepository.deleteById(id);
     }
