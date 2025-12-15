@@ -26,6 +26,20 @@ public class UsersService {
         return userRepository.save(user);
     }
 
+    public Users updateUser(Users user){
+        Users existing = userRepository.findById(user.getId())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (user.getFull_name() != null) existing.setFull_name(user.getFull_name());
+        if (user.getEmail() != null) existing.setEmail(user.getEmail());
+        if (user.getPassword_hash() != null) existing.setPassword_hash(user.getPassword_hash());
+        if (user.getNational_id() != null) existing.setNational_id(user.getNational_id());
+        if (user.getIs_active() != null) existing.setIs_active(user.getIs_active());
+        if (user.getCreated_at() != null) existing.setCreated_at(user.getCreated_at());
+
+        return userRepository.save(existing);
+    }
+
     public void deleteUser(int id){
         userRepository.deleteById(id);
     }
