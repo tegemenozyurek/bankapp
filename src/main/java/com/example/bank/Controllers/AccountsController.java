@@ -30,6 +30,12 @@ public class AccountsController {
         return accountService.saveAccount(account);
     }
 
+    @PutMapping("/update/{id}")
+    public Accounts updateAccount(@PathVariable Integer id, @RequestBody Accounts account){
+        account.setId(id);
+        return accountService.updateAccount(account);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteAccount(@PathVariable int id){
         accountService.deleteAccount(id);
