@@ -48,5 +48,11 @@ A simple Spring Boot banking application with REST API endpoints for managing us
 
 ## Database
 
-The application uses MySQL. Make sure to configure your database connection in `application.properties`.
+The application uses MySQL database hosted on Railway. The database connection is configured in `application.properties`:
+
+- **Database**: Railway MySQL
+- **Connection**: Uses environment variables (`MYSQL_URL`, `MYSQL_USER`, `MYSQL_PASSWORD`) or defaults to Railway connection
+- **Auto-update**: Database schema is automatically updated on startup (`spring.jpa.hibernate.ddl-auto=update`)
+
+To use your own database, update the connection settings in `application.properties` or set the environment variables.
 
